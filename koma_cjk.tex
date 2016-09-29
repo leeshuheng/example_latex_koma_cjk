@@ -8,9 +8,9 @@
 \usepackage{scrpage2}
 \usepackage{CJKutf8}
 \usepackage[pdftex]{hyperref}
-\usepackage{setspace}
 \usepackage{scrtime}
 \usepackage{scrdate}
+\usepackage{chemfig}
 
 \pagestyle{scrheadings}
 
@@ -19,8 +19,8 @@
 \setfootbotline{2pt}
 \setfootsepline[text]{.4pt}
 
-
 \automark[subsection]{section}
+
 
 \begin{document}
 
@@ -40,7 +40,6 @@
 
 \begin{titlepage}
 
-\begin{spacing}{1}
 \maketitle
 
 \begin{abstract}
@@ -51,13 +50,13 @@
 
 {\small{\tableofcontents}}
 
-\end{spacing}
 \end{titlepage}
+
+
+%~\\\vspace{\stretch{0.5}}
 
 \section{一个公式}
 看看一个简单的数学公式排版怎样。\\
-
-~\\\vspace{\stretch{0.5}}
 
 \begin{equation}
 	e^{\pi i} - 1 = 0
@@ -73,9 +72,26 @@
 	\lim_{n \to \infty} \sum_{i=0}^{n} \frac{x^i}{i!} & = e^x
 \end{align}
 
-~\\\vspace{\stretch{0.5}}
+\section{化学式}
+捣鼓点化学。\footnote{
+	例子来自
+	\href{https://en.wikibooks.org/wiki/LaTeX/Chemical\_Graphics}
+	{wikibooks}和
+	\href{http://latex-community.org/know-how/434-chemistry-molecules}
+	{latex-community}} \\
+
+\begin{center}
+	\chemfig{*6(=-=-=-)} \\
+	\vspace{0.3cm}
+	\chemfig{-\chemabove{N}{\scriptstyle\oplus}(=[1]O)-[7]O^{\ominus}} \\
+	\vspace{0.3cm}
+	\chemfig{*6(=-=(-(=[2]O)-[::-60]O-[0]O-[::30](=[2]O)-[::-60]*6(=-=-=-))-=-)}
+\end{center}
+
+%~\\\vspace{\stretch{0.5}}
 
 \clearpage
+
 
 \section{来个表}
 
