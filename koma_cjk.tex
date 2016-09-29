@@ -1,0 +1,165 @@
+%%% 2016年 09月 28日 星期三 16:52:46 CST
+
+\documentclass{scrartcl}
+
+\usepackage{mathtools}
+\usepackage[top=3cm,left=1cm,right=1cm,bottom=3cm]{geometry}
+\usepackage{bookman}
+\usepackage{scrpage2}
+\usepackage{CJKutf8}
+\usepackage[pdftex]{hyperref}
+\usepackage{setspace}
+\usepackage{scrtime}
+\usepackage{scrdate}
+
+\pagestyle{scrheadings}
+
+\setheadtopline{2pt}
+\setheadsepline{.4pt}
+\setfootbotline{2pt}
+\setfootsepline[text]{.4pt}
+
+
+\automark[subsection]{section}
+
+\begin{document}
+
+\begin{CJK}{UTF8}{gbsn}
+
+\ohead{李小丹}
+\ihead{一个练习}
+\chead{\headmark}
+\ofoot{\href{mailto:mymail@dummy.com}{mail}}
+\ifoot{Tel:23571113}
+\cfoot[]{}
+
+\title{使用\KOMAScript编写中文文档}
+\subtitle{一个练习}
+\author{李小丹}
+\date{2016-09-28}
+
+\begin{titlepage}
+
+\begin{spacing}{1}
+\maketitle
+
+\begin{abstract}
+	本文使用\LaTeX和\KOMAScript来制作中文文档。
+\end{abstract}
+
+\vspace{1cm}
+
+{\small{\tableofcontents}}
+
+\end{spacing}
+\end{titlepage}
+
+\section{一个公式}
+看看一个简单的数学公式排版怎样。\\
+
+~\\\vspace{\stretch{0.5}}
+
+\begin{equation}
+	e^{\pi i} - 1 = 0
+\end{equation}
+
+\subsection{再来几个公式}
+\begin{equation}
+	\int_0^1 f(x)\,\mathrm{d}x = \varphi
+\end{equation}
+
+\begin{align}
+	\lim_{n \to \infty} \left(1 + \frac{1}{n} \right) ^ n & = e\\
+	\lim_{n \to \infty} \sum_{i=0}^{n} \frac{x^i}{i!} & = e^x
+\end{align}
+
+~\\\vspace{\stretch{0.5}}
+
+\clearpage
+
+\section{来个表}
+
+\begin{tabular}{|c|c|}
+	\hline
+	a & b\\
+	\hline
+	c & d\\
+	\hline
+\end{tabular}
+
+\subsection{中文表}
+\begin{tabular}{|c|c|}
+	\hline
+	人 & 口\\
+	\hline
+	手 & 上\\
+	\hline
+	中 & 下\\
+	\hline
+\end{tabular}
+
+\section{其他}
+来点别的。
+
+\subsection{时间}
+玩玩时间。\\
+
+\begin{minipage}[h]{0.4\linewidth}
+\begin{flushleft}
+
+\begin{verse}
+Today is \todaysname. \\
+今天是\todaysname. \\
+现在是\thistime. \\
+\end{verse}
+
+%\begin{quotation}
+%Today is \todaysname. \\
+%今天是\todaysname. \\
+%现在是\thistime. \\
+%\end{quotation}
+
+\subsection{some Item}
+来几个item。
+
+\minisec{来个普通的}
+\begin{itemize}
+	\item 第一条
+	\item 第二条
+		\begin{itemize}
+			\item 第1条
+			\item 第2条
+		\end{itemize}
+	\item 第三条
+\end{itemize}
+
+\end{flushleft}
+\end{minipage}
+\begin{minipage}[h]{0.5\linewidth}
+\begin{flushright}
+
+\minisec{来个description}
+~\\
+\begin{description}
+	\item[一、] 没错，这个是第一。
+	\item[二、] 没错，这个是第二。
+\end{description}
+
+\minisec{再来个labeling}
+它能自动对齐。\\
+\begin{labeling}[~~---~]{\usekomafont{descriptionlabel}myheadings}
+	\item[\usekomafont{descriptionlabel}这也太长了吧]
+		确实很长啊
+	\item[\usekomafont{descriptionlabel}copy]
+		这行是我复制上一行.
+	\item[\usekomafont{descriptionlabel}vim copy很方便]
+		这行同样处理了。
+\end{labeling}
+
+\end{flushright}
+\end{minipage}
+
+
+\clearpage\end{CJK}
+
+\end{document}
